@@ -3,6 +3,7 @@ module MyEnumerable
       @list.each do |single|
         return false unless yield single
       end
+      return true
     end
   
     def any?

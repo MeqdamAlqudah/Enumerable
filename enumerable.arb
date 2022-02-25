@@ -6,7 +6,12 @@ module MyEnumerable
   end
 
   def any?
-    yield @list
+    @list.each do |single|
+      if yield single
+         return true 
+      end
+    end
+    return false
   end
 
   def filter
@@ -26,4 +31,5 @@ class MyList
 end
 
 cl = MyList.new(1, 2, 3, 4, 5, 6, 8)
-puts cl.filter(&:even?)
+puts cl.any?{|e| e == 10}
+

@@ -1,9 +1,21 @@
-require('./module')
+require_relative('./module')
 class MyList
   include MyEnumerable
   def initialize(*list)
     @list = list
   end
+
+  # rubocop:disable Style/RedundantReturn
+  # rubocop:disable Style/ExplicitBlockArgument
+  def each
+    puts
+    @list.each do |i|
+      yield i
+    end
+    return
+  end
+  # rubocop:enable Style/RedundantReturn
+  # rubocop:enable Style/ExplicitBlockArgument
 end
 
 list = MyList.new(1, 2, 3, 4)
@@ -22,3 +34,9 @@ puts(list.any? { |e| e == 5 })
 # Test #filter
 puts(list.filter(&:even?))
 # => [2, 4]
+puts(list.each { |i| puts i * 2 })
+# =>
+# 2
+# 4
+# 6
+# 8

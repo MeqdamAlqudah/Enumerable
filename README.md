@@ -1,7 +1,23 @@
+
+## Getting Started
+
+This repository includes files with plain .rb that can be used to apply some methods on an array
+
 # Enumerable
 - Use [enumerable.rb](./enumerable.rb) to use any? ,  all? and filter functionality.
 
+# Set up
+make sure that you have ruby downloaded on  your computer [install ruby](https://www.ruby-lang.org/en/documentation/installation/)
+Install
 
+## Usage
+use the methods in module.rb to apply (any?, all? and filter ) methods by define an instance of my list class then use these methods on an array
+
+# Run tests
+
+try this code to test the methods
+
+![screenshot](./Capture.PNG)
 ## Authors
 
 👤 **Meqdam Al-qudah**

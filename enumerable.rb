@@ -5,16 +5,14 @@ class MyList
     @list = list
   end
 
-  # rubocop:disable Style/RedundantReturn
   # rubocop:disable Style/ExplicitBlockArgument
   def each
     puts
     @list.each do |i|
       yield i
     end
-    return
+    nil
   end
-  # rubocop:enable Style/RedundantReturn
   # rubocop:enable Style/ExplicitBlockArgument
 end
 
